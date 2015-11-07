@@ -94,7 +94,7 @@ class MasterViewController: UITableViewController, WKScriptMessageHandler {
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showDetail" {
-      // Intentionally left blank
+      // This method is intentionally left blank
     }
   }
   
@@ -115,6 +115,7 @@ class MasterViewController: UITableViewController, WKScriptMessageHandler {
     let speaker = speakers[indexPath.row]
     cell.textLabel?.text = speaker.speakerName
     
+    // Don't do this, I was just in a hurry :)
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
       print("url is \(speaker.avatarURL)")
       if let url = NSURL(string:speaker.avatarURL) {
